@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Bing\EasyExcel\Attributes\Read\" />
+    <Folder Include="Bing\EasyExcel\Read\" />
+    <Folder Include="Bing\EasyExcel\Write\" />
+  </ItemGroup>
+
+</Project>
