@@ -1,6 +1,4 @@
-﻿using Bing.EasyExcel.Npoi.Metadata;
-
-namespace Bing.EasyExcel.Npoi.Extensions
+﻿namespace Bing.EasyExcel.Npoi.Extensions
 {
     /// <summary>
     /// NPOI单元行(<see cref="NPOI.SS.UserModel.IRow"/>) 扩展
@@ -8,9 +6,14 @@ namespace Bing.EasyExcel.Npoi.Extensions
     public static class RowExtensions
     {
         /// <summary>
-        /// 获取适配器
+        /// 清空内容
         /// </summary>
         /// <param name="row">NPOI单元行</param>
-        internal static Row GetAdapter(this NPOI.SS.UserModel.IRow row) => null == row ? null : new Row(row);
+        public static NPOI.SS.UserModel.IRow ClearContent(this NPOI.SS.UserModel.IRow row)
+        {
+            foreach (var cell in row.Cells)
+                cell.SetCellValue(string.Empty);
+            return row;
+        }
     }
 }

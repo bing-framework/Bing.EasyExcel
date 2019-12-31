@@ -33,29 +33,25 @@ namespace Bing.EasyExcel.Npoi.Metadata
         /// <param name="npoiSheet">NPOI工作表</param>
         public Sheet(NPOI.SS.UserModel.ISheet npoiSheet) => NpoiSheet = npoiSheet;
 
-        /// <summary>Returns an enumerator that iterates through the collection.</summary>
-        /// <returns>An enumerator that can be used to iterate through the collection.</returns>
+        /// <summary>
+        /// 获取集合
+        /// </summary>
         public IEnumerator<IRow> GetEnumerator()
         {
-            throw new NotImplementedException();
+            foreach (NPOI.SS.UserModel.IRow npoiRow in NpoiSheet)
+                yield return npoiRow.GetAdapter();
         }
 
-        /// <summary>Returns an enumerator that iterates through a collection.</summary>
-        /// <returns>An <see cref="T:System.Collections.IEnumerator"></see> object that can be used to iterate through the collection.</returns>
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
+        /// <summary>
+        /// 获取集合
+        /// </summary>
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         /// <summary>
         /// 获取原始值
         /// </summary>
-        public object GetOriginal()
-        {
-            throw new NotImplementedException();
-        }
+        public object GetOriginal() => NpoiSheet;
 
-       
 
         /// <summary>
         /// 复制单元行

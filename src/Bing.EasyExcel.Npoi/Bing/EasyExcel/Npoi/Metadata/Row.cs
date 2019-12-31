@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Bing.EasyExcel.Metadata;
 using Bing.EasyExcel.Npoi.Extensions;
 
@@ -31,7 +30,11 @@ namespace Bing.EasyExcel.Npoi.Metadata
         /// <summary>
         /// 获取集合
         /// </summary>
-        public IEnumerator<ICell> GetEnumerator() => NpoiRow.Select(npoiCell => npoiCell.GetAdapter()).Cast<ICell>().GetEnumerator();
+        public IEnumerator<ICell> GetEnumerator()
+        {
+            foreach (NPOI.SS.UserModel.ICell npoiCell in NpoiRow)
+                yield return npoiCell.GetAdapter();
+        }
 
         /// <summary>
         /// 获取集合
