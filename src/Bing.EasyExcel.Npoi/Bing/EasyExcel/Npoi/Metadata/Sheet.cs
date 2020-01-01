@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Bing.EasyExcel.Metadata;
 using Bing.EasyExcel.Npoi.Extensions;
@@ -58,19 +57,13 @@ namespace Bing.EasyExcel.Npoi.Metadata
         /// </summary>
         /// <param name="start">开始行索引</param>
         /// <param name="end">结束行索引</param>
-        public int CopyRows(int start, int end)
-        {
-            throw new NotImplementedException();
-        }
+        public int CopyRows(int start, int end) => NpoiSheet.CopyRows(start, end);
 
         /// <summary>
         /// 移除单元行
         /// </summary>
         /// <param name="start">开始行索引</param>
         /// <param name="end">结束行索引</param>
-        public int RemoveRows(int start, int end)
-        {
-            throw new NotImplementedException();
-        }
+        public int RemoveRows(int start, int end) => NpoiSheet.RemoveRows(start, end);
     }
 }

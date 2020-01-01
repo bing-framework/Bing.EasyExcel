@@ -1,5 +1,4 @@
 ﻿using Bing.EasyExcel.Npoi.Metadata;
-using NPOI.SS.UserModel;
 
 namespace Bing.EasyExcel.Npoi.Extensions
 {
@@ -12,7 +11,7 @@ namespace Bing.EasyExcel.Npoi.Extensions
         /// 获取适配器
         /// </summary>
         /// <param name="cell">NPOI单元格</param>
-        internal static Cell GetAdapter(this ICell cell) => null == cell ? null : new Cell(cell);
+        internal static Cell GetAdapter(this NPOI.SS.UserModel.ICell cell) => null == cell ? null : new Cell(cell);
 
         /// <summary>
         /// 获取适配器
@@ -25,5 +24,12 @@ namespace Bing.EasyExcel.Npoi.Extensions
         /// </summary>
         /// <param name="sheet">NPOI工作表</param>
         internal static Sheet GetAdapter(this NPOI.SS.UserModel.ISheet sheet) => null == sheet ? null : new Sheet(sheet);
+
+        /// <summary>
+        /// 获取适配器
+        /// </summary>
+        /// <param name="workbook">NPOI工作簿</param>
+        internal static Workbook GetAdapter(this NPOI.SS.UserModel.IWorkbook workbook) =>
+            null == workbook ? null : new Workbook(workbook);
     }
 }

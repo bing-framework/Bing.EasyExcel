@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Bing.EasyExcel.Metadata;
 using Bing.EasyExcel.Npoi.Extensions;
@@ -9,7 +8,7 @@ namespace Bing.EasyExcel.Npoi.Metadata
     /// <summary>
     /// 工作簿
     /// </summary>
-    public class Workbook:IWorkbook
+    public class Workbook : IWorkbook
     {
         /// <summary>
         /// NPOI工作簿
@@ -27,7 +26,8 @@ namespace Bing.EasyExcel.Npoi.Metadata
         /// </summary>
         public IEnumerator<ISheet> GetEnumerator()
         {
-            throw new NotImplementedException();
+            foreach (NPOI.SS.UserModel.ISheet npoiSheet in NpoiWorkbook)
+                yield return npoiSheet.GetAdapter();
         }
 
         /// <summary>
@@ -49,9 +49,6 @@ namespace Bing.EasyExcel.Npoi.Metadata
         /// <summary>
         /// 保存到流
         /// </summary>
-        public byte[] SaveToBuffer()
-        {
-            throw new NotImplementedException();
-        }
+        public byte[] SaveToBuffer() => NpoiWorkbook.SaveToBuffer();
     }
 }
