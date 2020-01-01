@@ -35,14 +35,15 @@ namespace Bing.EasyExcel.Npoi.Extensions
         /// <param name="maxRow">最大行索引</param>
         /// <param name="minCol">最小列索引</param>
         /// <param name="maxCol">最大列索引</param>
+        /// <param name="onlyInternal">是否仅在内部</param>
         public static List<MergedRegionInfo> GetMergedRegionInfos(this NPOI.SS.UserModel.ISheet sheet, int? minRow,
-            int? maxRow, int? minCol, int? maxCol)
+            int? maxRow, int? minCol, int? maxCol,bool onlyInternal = true)
         { 
             var regionInfoList = new List<MergedRegionInfo>();
             for (var i = 0; i < sheet.NumMergedRegions; i++)
             {
                 var range = sheet.GetMergedRegion(i);
-                if (IsInternalOrIntersect(minRow, maxRow, minCol, maxCol, range.FirstRow, range.LastRow, range.FirstColumn, range.LastColumn, true))
+                if (IsInternalOrIntersect(minRow, maxRow, minCol, maxCol, range.FirstRow, range.LastRow, range.FirstColumn, range.LastColumn, onlyInternal))
                     regionInfoList.Add(new MergedRegionInfo(i, range.FirstRow, range.LastRow, range.FirstColumn, range.LastColumn));
             }
             return regionInfoList;
