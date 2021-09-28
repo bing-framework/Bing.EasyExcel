@@ -6,9 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Bing\EasyExcel\Read\**" />
+    <Compile Remove="Bing\EasyExcel\Write\**" />
+    <EmbeddedResource Remove="Bing\EasyExcel\Read\**" />
+    <EmbeddedResource Remove="Bing\EasyExcel\Write\**" />
+    <None Remove="Bing\EasyExcel\Read\**" />
+    <None Remove="Bing\EasyExcel\Write\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Bing\EasyExcel\Attributes\Read\" />
-    <Folder Include="Bing\EasyExcel\Read\" />
-    <Folder Include="Bing\EasyExcel\Write\" />
   </ItemGroup>
 
 </Project>

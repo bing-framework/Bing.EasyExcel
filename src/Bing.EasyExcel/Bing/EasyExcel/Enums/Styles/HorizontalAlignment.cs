@@ -8,14 +8,14 @@
         /// <summary>
         /// 左对齐
         /// </summary>
-        Left,
+        Left = 1,
         /// <summary>
-        /// 居中对齐
+        /// 居中
         /// </summary>
-        Center,
+        Center = 2,
         /// <summary>
         /// 右对齐
         /// </summary>
-        Right,
+        Right = 3
     }
 }

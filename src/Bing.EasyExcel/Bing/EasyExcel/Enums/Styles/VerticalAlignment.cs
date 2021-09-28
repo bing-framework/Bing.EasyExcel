@@ -6,16 +6,16 @@
     public enum VerticalAlignment
     {
         /// <summary>
-        /// 顶端对齐
+        /// 顶部对齐
         /// </summary>
-        Top,
+        Top = 0,
         /// <summary>
-        /// 垂直居中
+        /// 居中
         /// </summary>
-        Center,
+        Center = 1,
         /// <summary>
-        /// 底端对齐
+        /// 底部对齐
         /// </summary>
-        Bottom,
+        Bottom = 2
     }
 }
