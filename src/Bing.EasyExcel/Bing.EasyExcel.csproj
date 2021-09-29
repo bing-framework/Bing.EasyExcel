@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,15 +7,16 @@
 
   <ItemGroup>
     <Compile Remove="Bing\EasyExcel\Read\**" />
-    <Compile Remove="Bing\EasyExcel\Write\**" />
     <EmbeddedResource Remove="Bing\EasyExcel\Read\**" />
-    <EmbeddedResource Remove="Bing\EasyExcel\Write\**" />
     <None Remove="Bing\EasyExcel\Read\**" />
-    <None Remove="Bing\EasyExcel\Write\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Bing\EasyExcel\Attributes\Read\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
   </ItemGroup>
 
 </Project>

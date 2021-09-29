@@ -1,9 +1,9 @@
 ﻿namespace Bing.EasyExcel.Enums.Styles
 {
     /// <summary>
-    /// 填充模式
+    /// 填充模式类型
     /// </summary>
-    public enum FillPattern
+    public enum FillPatternType
     {
         /// <summary>
         /// 无填充

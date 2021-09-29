@@ -5,7 +5,7 @@ namespace Bing.EasyExcel.Exports.Attributes
     /// <summary>
     /// 列宽 特性
     /// </summary>
-    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, Inherited = false, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public class ColumnWidthAttribute : Attribute
     {
         /// <summary>

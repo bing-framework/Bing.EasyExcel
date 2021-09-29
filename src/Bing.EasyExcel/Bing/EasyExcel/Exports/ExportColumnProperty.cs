@@ -49,6 +49,16 @@ namespace Bing.EasyExcel.Exports
         public bool RowMerged { get; set; }
 
         /// <summary>
+        /// 是否忽略属性
+        /// </summary>
+        public bool Ignored { get; set; }
+
+        /// <summary>
+        /// 默认值
+        /// </summary>
+        public object DefaultValue { get; set; }
+
+        /// <summary>
         /// 属性信息
         /// </summary>
         public PropertyInfo PropertyInfo { get; set; }
@@ -70,6 +80,8 @@ namespace Bing.EasyExcel.Exports
                 StringFormat = formatterAttr.Format;
             if (property.GetCustomAttribute(typeof(RowMergedAttribute)) is RowMergedAttribute)
                 RowMerged = true;
+            if (Helper.HasIgnore(property))
+                Ignored = true;
             PropertyInfo = property;
         }
     }

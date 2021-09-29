@@ -40,7 +40,7 @@ namespace Bing.EasyExcel.Attributes.Write.Styles
         /// <summary>
         /// 填充模式
         /// </summary>
-        public FillPattern FillPattern { get; set; }
+        public FillPatternType FillPattern { get; set; }
 
         /// <summary>
         /// 是否粗体
@@ -70,7 +70,7 @@ namespace Bing.EasyExcel.Attributes.Write.Styles
             TextAlign = HorizontalAlignment.Center;
             VerticalAlign = VerticalAlignment.Top;
             FontSize = -1;
-            FillPattern = FillPattern.SolidForeground;
+            FillPattern = FillPatternType.SolidForeground;
         }
     }
 }
