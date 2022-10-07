@@ -3,9 +3,9 @@
 namespace Bing.EasyExcel.Attributes
 {
     /// <summary>
-    /// Excel列特性
+    /// Excel表列 特性
     /// </summary>
-    [AttributeUsage(AttributeTargets.Property)]
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     [Serializable]
     public class ExcelColumnAttribute : ExcelAttribute
     {

@@ -12,7 +12,7 @@ namespace Bing.EasyExcel.Exceptions
         /// <summary>
         /// 初始化一个<see cref="EasyExcelException"/>类型的实例
         /// </summary>
-        public EasyExcelException() : base("Office异常") { }
+        public EasyExcelException() : base("EasyExcel异常") { }
 
         /// <summary>
         /// 初始化一个<see cref="EasyExcelException"/>类型的实例
